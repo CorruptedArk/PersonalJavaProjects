@@ -1,0 +1,12 @@
+1. The problem 5 x 8 was answered as 40 correctly in 2 seconds.
+1. The problem -4 x 0 was answered as 0 correctly in 3 seconds.
+2. The problem -5 x -4 was answered as 0 incorrectly in 1 second.
+3. The problem -1 x 0 was answered as 0 correctly in 0 seconds.
+4. The problem -8 x -10 was answered as 0 incorrectly in 0 seconds.
+5. The problem 0 x 10 was answered as 0 correctly in 0 seconds.
+6. The problem -9 x -3 was answered as 0 incorrectly in 0 seconds.
+7. The problem -1 x -7 was answered as 0 incorrectly in 2 seconds.
+8. The problem -10 x -5 was answered as 0 incorrectly in 0 seconds.
+9. The problem 9 x -7 was answered as 0 incorrectly in 0 seconds.
+10. The problem 6 x -8 was answered as 0 incorrectly in 0 seconds.
+1. The problem -13 x -15 was answered as 0 incorrectly in 5 seconds.
