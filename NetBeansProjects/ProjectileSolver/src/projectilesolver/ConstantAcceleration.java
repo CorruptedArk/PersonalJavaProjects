@@ -78,16 +78,32 @@ public class ConstantAcceleration {
         this.vf = vf;
         this.Δx = Δx;
         this.a = a;
-        this.vi = Math.sqrt(Math.pow(vf,2) - (2*a*Δx));
-        this.t = (2*Δx) / (vf + vi); 
+        double tempVi = Math.sqrt(Math.pow(vf,2) - (2*a*Δx));
+        double tempT = (2*Δx) / (vf + tempVi);
+        if(tempT >= 0){
+            this.vi = tempVi;
+            this.t = tempT;
+        }
+        else{
+            this.vi = -tempVi;
+            this.t = (2*Δx) / (vf + vi);
+        }
     }
     
     public void noVfNoT(double vi, double Δx, double a){ 
         this.vi = vi;
         this.Δx = Δx;
         this.a = a;
-        this.vf = Math.sqrt(Math.pow(vi, 2) + (2*a*Δx));
-        this.t = (2*Δx) / (vf + vi);
+        double tempVf = Math.sqrt(Math.pow(vi, 2) + (2*a*Δx));
+        double tempT = (2*Δx) / (tempVf + vi);
+        if(tempT >= 0){
+            this.vf = tempVf;
+            this.t = tempT;
+        }
+        else{
+            this.vf = -tempVf;
+            this.t = (2*Δx) / (vf + vi);
+        }
     }
     
     public void noViNoVf(double Δx, double a, double t){
