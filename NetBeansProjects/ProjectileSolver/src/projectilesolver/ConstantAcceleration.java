@@ -12,11 +12,11 @@ package projectilesolver;
  * @author Noah
  */
 public class ConstantAcceleration {
-    public double vi;
-    public double vf;
+    public double vi,vi2;
+    public double vf,vf2;
     public double Δx;
     public double a;
-    public double t;
+    public double t,t2;
     
     public void noVfNoΔx(double vi, double a, double t){
         this.vi = vi;
@@ -78,15 +78,21 @@ public class ConstantAcceleration {
         this.vf = vf;
         this.Δx = Δx;
         this.a = a;
-        double tempVi = Math.sqrt(Math.pow(vf,2) - (2*a*Δx));
-        double tempT = (2*Δx) / (vf + tempVi);
-        if(tempT >= 0){
-            this.vi = tempVi;
-            this.t = tempT;
+        
+        this.vi2 = Math.sqrt(Math.pow(vf,2) - (2*a*Δx));
+        if(vf + vi2 == 0){
+        	this.t2 = (vf-vi)/a;
+        } 
+        else {
+        	this.t2 = (2*Δx) / (vf + vi2);
         }
+        
+        this.vi = -vi2;
+        if(vf + vi == 0){
+        	this.t = (vf-vi)/a;
+        } 
         else{
-            this.vi = -tempVi;
-            this.t = (2*Δx) / (vf + vi);
+        	this.t = (2*Δx) / (vf + vi);
         }
     }
     
@@ -94,15 +100,20 @@ public class ConstantAcceleration {
         this.vi = vi;
         this.Δx = Δx;
         this.a = a;
-        double tempVf = Math.sqrt(Math.pow(vi, 2) + (2*a*Δx));
-        double tempT = (2*Δx) / (tempVf + vi);
-        if(tempT >= 0){
-            this.vf = tempVf;
-            this.t = tempT;
+        this.vf2 = Math.sqrt(Math.pow(vi, 2) + (2*a*Δx));
+        if(vf2 + vi == 0){
+        	this.t2 = (vf2-vi)/a;
         }
         else{
-            this.vf = -tempVf;
-            this.t = (2*Δx) / (vf + vi);
+        	this.t2 = (2*Δx) / (vf2 + vi);
+        }
+        
+        this.vf = -vf2;
+        if(vf + vi == 0){
+        	this.t = (vf-vi)/a;
+        }
+        else{
+        	this.t = (2*Δx) / (vf + vi);
         }
     }
     
