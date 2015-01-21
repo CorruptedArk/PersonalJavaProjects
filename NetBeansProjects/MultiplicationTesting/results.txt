@@ -10,3 +10,4 @@
 9. The problem 9 x -7 was answered as 0 incorrectly in 0 seconds.
 10. The problem 6 x -8 was answered as 0 incorrectly in 0 seconds.
 1. The problem -13 x -15 was answered as 0 incorrectly in 5 seconds.
+1. The problem 4 x 6 was answered as 24 correctly in 4 seconds.
