@@ -1,9 +1,0 @@
-package com.corruptedark.cypher2;
-
-public class Cypher2 {
-
-	public static void main(String[] args) {
-		
-	}
-
-}
