@@ -32,9 +32,19 @@ public class Punch {
         }
     }
    
-    private void format(){
+   private void format(){
        TimeMath timeMath = new TimeMath();
-       timeMath.set(TimeMath.SECOND, (int) (remaining/1000));
-       formattedRemaining = String.format("%02d",timeMath.get(TimeMath.HOUR)) + ":" + String.format("%02d",timeMath.get(TimeMath.MINUTE))+ ":" + String.format("%02d",timeMath.get(TimeMath.SECOND));
+       if(remaining < 0){
+            timeMath.set(TimeMath.SECOND, (int) (-remaining/1000));      
+            formattedRemaining = "-" + String.format("%02d",timeMath.get(TimeMath.HOUR)) + 
+               ":" + String.format("%02d",timeMath.get(TimeMath.MINUTE))+ ":" + 
+               String.format("%02d",timeMath.get(TimeMath.SECOND));
+       }else{
+            timeMath.set(TimeMath.SECOND, (int) (remaining/1000));      
+            formattedRemaining = String.format("%02d",timeMath.get(TimeMath.HOUR)) + 
+               ":" + String.format("%02d",timeMath.get(TimeMath.MINUTE))+ ":" + 
+               String.format("%02d",timeMath.get(TimeMath.SECOND)); 
+       }
+       
     }
 }

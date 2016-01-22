@@ -26,7 +26,7 @@ public class TimeMath {
 	
 	void format(){
 		boolean isNotFormatted = true;
-		do{
+		while(isNotFormatted){
 			if(times[SECOND] >= 60){
 				times[SECOND] -= 60;
 				times[MINUTE] += 1;
@@ -43,9 +43,9 @@ public class TimeMath {
 				times[MINUTE] += 60;
 				times[HOUR] -= 1;
 			}
-			if(times[SECOND] < 60 && times[MINUTE] < 60 && times[SECOND] >= 0 && times[MINUTE] >= 0){
+			if(Math.abs(times[SECOND]) < 60 && Math.abs(times[MINUTE]) < 60){
 				isNotFormatted = false;
 			}
-		}while(isNotFormatted);
+		}
 	}
 }

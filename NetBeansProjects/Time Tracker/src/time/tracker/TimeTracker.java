@@ -227,8 +227,18 @@ public class TimeTracker extends javax.swing.JFrame {
     
     private static void format(){
        TimeMath timeMath = new TimeMath();
-       timeMath.set(TimeMath.SECOND, (int) (currentRemaining/1000));
-       formattedRemaining = String.format("%02d",timeMath.get(TimeMath.HOUR)) + ":" + String.format("%02d",timeMath.get(TimeMath.MINUTE))+ ":" + String.format("%02d",timeMath.get(TimeMath.SECOND));
+       if(currentRemaining < 0){
+            timeMath.set(TimeMath.SECOND, (int) (-currentRemaining/1000));      
+            formattedRemaining = "-" + String.format("%02d",timeMath.get(TimeMath.HOUR)) + 
+               ":" + String.format("%02d",timeMath.get(TimeMath.MINUTE))+ ":" + 
+               String.format("%02d",timeMath.get(TimeMath.SECOND));
+       }else{
+            timeMath.set(TimeMath.SECOND, (int) (currentRemaining/1000));      
+            formattedRemaining = String.format("%02d",timeMath.get(TimeMath.HOUR)) + 
+               ":" + String.format("%02d",timeMath.get(TimeMath.MINUTE))+ ":" + 
+               String.format("%02d",timeMath.get(TimeMath.SECOND)); 
+       }
+       
     }
     /**
      * @param args the command line arguments
