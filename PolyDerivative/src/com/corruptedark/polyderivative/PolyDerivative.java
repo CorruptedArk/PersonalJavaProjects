@@ -9,7 +9,7 @@ public class PolyDerivative {
 	public static void main(String[] args) {
 		int degree;
 		double[][] polyVector,derivative, matrix;
-		String polyString, answer;
+		String polyString;
 		
 		print("Enter the degree of the polynomial: ");
 		degree = scan.nextInt();
