@@ -24,6 +24,12 @@ public class MatrixDeterminant {
 		return;
 	}
 	
+	/**
+	 * Multiplies two matrices in the standard basis.
+	 * @param A The first matrix
+	 * @param B The second matrix
+	 * @return The product matrix
+	 */
 	static double[][] multiply(double[][] A, double[][] B){
 		double[][] AB = new double[A.length][B[0].length];
 		for(int i = 0; i < A.length; i++){
@@ -36,6 +42,11 @@ public class MatrixDeterminant {
 		return AB;
 	}
 	
+	/**
+	 * Calculates the transpose of a matrix.
+	 * @param A The input matrix
+	 * @return The transpose of matrix A
+	 */
 	static double[][] transpose(double[][] A){
 		double[][] B = new double[A[0].length][A.length];
 		for(int i = 0; i < A.length; i++){
@@ -46,6 +57,11 @@ public class MatrixDeterminant {
 		return B;
 	}
 	
+	/**
+	 * Recursively calculates the determinant of a matrix.
+	 * @param A The input matrix
+	 * @return The determinant of matrix A
+	 */
 	static double det(double[][] A){
 		double det = 0;
 		if(A.length == 1){
@@ -58,7 +74,13 @@ public class MatrixDeterminant {
 		return det;
 	}
 	
-	
+	/**
+	 * Calculates the minor of a matrix for given indices
+	 * @param A The matrix
+	 * @param i The first index
+	 * @param j The second index
+	 * @return The minor matrix
+	 */
 	static double[][] minor(double[][] A, int i, int j){
 		double[][] minor = new double[A.length-1][A.length-1];
 		int n = 0, m = 0; 
@@ -77,7 +99,10 @@ public class MatrixDeterminant {
 		return minor;
 	}
 	
-	
+	/**
+	 * Fills a matrix from user input.
+	 * @param matrix The matrix to be filled
+	 */
 	static void input(double[][] matrix){
 		for(int i = 0; i < matrix.length; i++){
 			
@@ -88,24 +113,28 @@ public class MatrixDeterminant {
 		}
 	}
 	
-	
-	static void print(String outPut){
-		System.out.print(outPut);
+	/**
+	 * Prints a string. Shorthand for System.out.print()
+	 * @param output The String to print
+	 */
+	static void print(String output){
+		System.out.print(output);
 	}
 	
-	static void print(int outPut){
-		System.out.print(outPut);
+	/**
+	 * Prints an integer. Shorthand for System.out.print()
+	 * @param output The integer to print
+	 */
+	static void print(int output){
+		System.out.print(output);
 	}
 	
-	static void print(double[][] matrix){
-		for(int i = 0; i < matrix.length; i++){
-			print("[");
-			for(int j = 0; j < matrix[i].length; j++){
-				print(matrix[i][j] + " ");
-			}
-			print("]");
-			print("\n");
-		}
+	/**
+	 * Prints a double. Shorthand for System.out.print()
+	 * @param output The double to print
+	 */
+	static void print(double output){
+		System.out.print(output);
 	}
 }
 

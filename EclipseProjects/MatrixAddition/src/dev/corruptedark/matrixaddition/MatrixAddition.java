@@ -34,6 +34,12 @@ public class MatrixAddition {
 		return;
 	}
 	
+	/**
+	 * Adds two matrices.
+	 * @param matrix1 The first matrix
+	 * @param matrix2 The second matrix
+	 * @return The matrix sum
+	 */
 	static double[][] add(double[][] matrix1, double[][] matrix2){
 		double[][] sum = new double[matrix1.length][matrix1[0].length];
 		for(int i = 0; i < sum.length; i++)
@@ -43,6 +49,12 @@ public class MatrixAddition {
 		return sum;
 	}
 	
+	/**
+	 * Subtracts two matrices
+	 * @param matrix1 The first matrix
+	 * @param matrix2 The second matrix
+	 * @return The matrix difference
+	 */
 	static double[][] subtract(double[][] matrix1, double[][] matrix2){
 		double[][] diff = new double[matrix1.length][matrix1[0].length];
 		for(int i = 0; i < diff.length; i++)
@@ -52,6 +64,10 @@ public class MatrixAddition {
 		return diff;
 	}
 	
+	/**
+	 * Fills a matrix from user input.
+	 * @param matrix The matrix to be filled
+	 */
 	static void input(double[][] matrix){
 		for(int i = 0; i < matrix.length; i++){
 			
@@ -62,19 +78,34 @@ public class MatrixAddition {
 		}
 	}
 	
-	
+	/**
+	 * Prints a string. Shorthand for System.out.print()
+	 * @param output The String to print
+	 */
 	static void print(String output){
 		System.out.print(output);
 	}
 	
+	/**
+	 * Prints an integer. Shorthand for System.out.print()
+	 * @param output The integer to print
+	 */
 	static void print(int output){
 		System.out.print(output);
 	}
 	
+	/**
+	 * Prints a double. Shorthand for System.out.print()
+	 * @param output The double to print
+	 */
 	static void print(double output){
 		System.out.print(output);
 	}
 	
+	/**
+	 * Prints out the matrix to the console.
+	 * @param matrix The matrix to print
+	 */
 	static void print(double[][] matrix){
 		for(int i = 0; i < matrix.length; i++){
 			print("[");
@@ -85,6 +116,10 @@ public class MatrixAddition {
 		}
 	}
 	
+	/**
+	 * Prints out a vector to the console
+	 * @param vector The vector to print
+	 */
 	static void print(double[] vector){
 		print("[");
 		for(int i = 0; i < vector.length; i++){

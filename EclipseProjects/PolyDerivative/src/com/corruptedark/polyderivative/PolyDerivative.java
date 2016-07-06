@@ -62,6 +62,11 @@ public class PolyDerivative {
 
 	}
 	
+	/**
+	 * Generates the derivative matrix of a desired dimension
+	 * @param degree The dimension of the matrix
+	 * @return The derivative matrix
+	 */
 	static double[][] derivativeMatrix(int degree){
 		double[][] matrix = new double[degree + 1][degree + 1];
 		for(int i = 0; i < matrix.length; i++){
@@ -76,6 +81,12 @@ public class PolyDerivative {
 		return matrix;
 	}
 	
+	/**
+	 * Multiplies two matrices in the standard basis.
+	 * @param A The first matrix
+	 * @param B The second matrix
+	 * @return The product matrix
+	 */
 	static double[][] multiply(double[][] A, double[][] B){
 		double[][] AB = new double[A.length][B[0].length];
 		for(int i = 0; i < A.length; i++){
@@ -88,6 +99,10 @@ public class PolyDerivative {
 		return AB;
 	}
 	
+	/**
+	 * Fills a matrix from user input.
+	 * @param matrix The matrix to be filled
+	 */
 	static void input(double[][] matrix){
 		for(int i = 0; i < matrix.length; i++){
 			
@@ -98,28 +113,42 @@ public class PolyDerivative {
 		}
 	}
 	
-	static void print(String outPut){
-		System.out.print(outPut);
+	/**
+	 * Prints a string. Shorthand for System.out.print()
+	 * @param output The String to print
+	 */
+	static void print(String output){
+		System.out.print(output);
 	}
 	
-	static void print(int outPut){
-		System.out.print(outPut);
+	/**
+	 * Prints an integer. Shorthand for System.out.print()
+	 * @param output The integer to print
+	 */
+	static void print(int output){
+		System.out.print(output);
 	}
 	
-	static void print(double outPut){
-		System.out.print(outPut);
+	/**
+	 * Prints a double. Shorthand for System.out.print()
+	 * @param output The double to print
+	 */
+	static void print(double output){
+		System.out.print(output);
 	}
 	
+	/**
+	 * Prints out the matrix to the console.
+	 * @param matrix The matrix to print
+	 */
 	static void print(double[][] matrix){
 		for(int i = 0; i < matrix.length; i++){
 			print("[");
 			for(int j = 0; j < matrix[i].length; j++){
 				print(matrix[i][j] + " ");
 			}
-			print("]");
-			print("\n");
+			print("]\n");
 		}
 	}
-
 
 }

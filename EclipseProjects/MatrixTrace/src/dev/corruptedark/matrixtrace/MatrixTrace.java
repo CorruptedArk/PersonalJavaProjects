@@ -22,6 +22,11 @@ public class MatrixTrace {
 		return;
 	}
 	
+	/**
+	 * Computes the trace of a matrix.
+	 * @param matrix The matrix
+	 * @return The trace
+	 */
 	static double trace(double[][] matrix){
 		double trace = 0;
 		for(int i = 0; i < matrix.length; i++)
@@ -29,28 +34,47 @@ public class MatrixTrace {
 		return trace;
 	}
 
+	/**
+	 * Fills a matrix from user input.
+	 * @param matrix The matrix to be filled
+	 */
 	static void input(double[][] matrix){
-		for(int i = 0; i < matrix.length; i++)
-			for(int j = 0; j < matrix[i].length; j++)
+		for(int i = 0; i < matrix.length; i++){
+			
+			for(int j = 0; j < matrix[i].length; j++){
 				matrix[i][j] = scan.nextDouble();
+			}
+			
+		}
 	}
 	
-	static void print(String outPut){
-		System.out.print(outPut);
+	/**
+	 * Prints a string. Shorthand for System.out.print()
+	 * @param output The String to print
+	 */
+	static void print(String output){
+		System.out.print(output);
 	}
 	
-	static void print(int outPut){
-		System.out.print(outPut);
+	/**
+	 * Prints an integer. Shorthand for System.out.print()
+	 * @param output The integer to print
+	 */
+	static void print(int output){
+		System.out.print(output);
 	}
 	
+	/**
+	 * Prints out the matrix to the console.
+	 * @param matrix The matrix to print
+	 */
 	static void print(double[][] matrix){
 		for(int i = 0; i < matrix.length; i++){
 			print("[");
 			for(int j = 0; j < matrix[i].length; j++){
 				print(matrix[i][j] + " ");
 			}
-			print("]");
-			print("\n");
+			print("]\n");
 		}
 	}
 }
