@@ -25,7 +25,7 @@ public class Accounting extends javax.swing.JFrame {
     String[] logFileText;
     BigDecimal balance;
     /**
-     * Creates new form NewJFrame
+     * Creates new form Accounting
      */
     public Accounting() throws IOException {
         logPath = "account.txt";
@@ -83,18 +83,8 @@ public class Accounting extends javax.swing.JFrame {
         setResizable(false);
 
         addField.setName("addField"); // NOI18N
-        addField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addFieldActionPerformed(evt);
-            }
-        });
 
         subtractField.setName("subtractField"); // NOI18N
-        subtractField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                subtractFieldActionPerformed(evt);
-            }
-        });
 
         addButton.setActionCommand("addButton");
         addButton.setLabel("add");
@@ -185,14 +175,12 @@ public class Accounting extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void subtractFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_subtractFieldActionPerformed
-
-    private void addFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFieldActionPerformed
-        
-    }//GEN-LAST:event_addFieldActionPerformed
-
+    /**
+     * Adds value in addField into balance if valid.
+     * Subsequently, it writes the new balance and the added value to account.txt
+     * @param evt The clicking event for addButton
+     */
+    
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         try {
             BigDecimal value;
@@ -210,6 +198,11 @@ public class Accounting extends javax.swing.JFrame {
         addField.setText("");
     }//GEN-LAST:event_addButtonActionPerformed
 
+    /**
+     * Subtracts value in subtractField from balance
+     * Subsequently, it writes the new balance and the subtracted value to account.txt
+     * @param evt The clicking event from subtractButton
+     */
     private void subtractButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractButtonActionPerformed
         try {
             BigDecimal value;
@@ -227,6 +220,13 @@ public class Accounting extends javax.swing.JFrame {
         subtractField.setText("");
     }//GEN-LAST:event_subtractButtonActionPerformed
 
+    /**
+     * Updates balance and writes the new balance into the log.
+     * @param operation The text field indicating whether to add or subtract.
+     * Either addField or subtract. 
+     * @param value The numerical value that should be parsed from operation
+     * @throws IOException when writing to the log fails
+     */
     private void updateBalance(TextField operation, BigDecimal value) throws IOException{
         if(operation.equals(addField)){
         balance = balance.add(value);    

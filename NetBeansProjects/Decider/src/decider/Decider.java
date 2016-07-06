@@ -127,6 +127,10 @@ public class Decider extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Adds a new option to be selected from listModel. 
+     * @param evt The clicking event from addOption.
+     */
     private void addOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOptionActionPerformed
         if(!newField.getText().equals("")){
             listModel.addElement(newField.getText());
@@ -134,6 +138,10 @@ public class Decider extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addOptionActionPerformed
 
+    /**
+     * Randomly picks an option from listModel.
+     * @param evt The clicking event from decideButton.
+     */
     private void decideButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decideButtonActionPerformed
         if(!listModel.isEmpty()){
             int i = random.nextInt(listModel.size());
@@ -142,6 +150,10 @@ public class Decider extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_decideButtonActionPerformed
 
+    /**
+     * Clears listModel of options.
+     * @param evt The clicking event from clearButton.
+     */
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         listModel.clear();
     }//GEN-LAST:event_clearButtonActionPerformed

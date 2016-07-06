@@ -159,6 +159,11 @@ public class MultiplicationProblems extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Writes to the log for the current problem and initiates next problem upon pressing the enter key.
+     * This function handles most of the logic for the problems.
+     * @param evt KeyEvent from the enter key.
+     */
     private void answerFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_answerFieldKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
            endTime = System.currentTimeMillis();
@@ -181,6 +186,9 @@ public class MultiplicationProblems extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_answerFieldKeyPressed
 
+    /**
+     * Starts a new random problem.
+     */
     private void startProblem(){
         problemCount++;
         oneText = random.nextInt(high - low + 1) + low;
@@ -192,18 +200,34 @@ public class MultiplicationProblems extends javax.swing.JFrame {
         startTime = System.currentTimeMillis();
     }
     
+    /**
+     * Records the correct answer to a problem.
+     * @param oneText The first value in a problem
+     * @param twoText The second value in a problem
+     */
     private void recordProblem(int oneText, int twoText){
         correctAnswer = oneText * twoText;
     }
     
+    /**
+     * Evaluates whether or not a problem was answered correctly.
+     */
     private void evaluteProblem(){
         wasCorrect = extract(answerField) == correctAnswer; 
     }
     
+    /**
+     * Records the duration of a problem.
+     * @param start Starting time in milliseconds
+     * @param end End time in milliseconds
+     */
     private void timeProblem(long start, long end){
         duration = (end - start) / 1000;
     }
     
+    /**
+     * Displays whether or not the previous problem was answered correctly. 
+     */
     private void displayCorrectness(){
         if(wasCorrect){
             set(jLabel1, "You were correct.");
@@ -213,17 +237,38 @@ public class MultiplicationProblems extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Sets the value of a JLabel
+     * @param label The JLabel
+     * @param value The integer value
+     */
     private void set(javax.swing.JLabel label, int value){
         label.setText(Integer.toString(value));
     }
     
+    /**
+     * Sets the value of a JTextField
+     * @param field The JTextField
+     * @param value The String value
+     */
     private void set(javax.swing.JTextField field, String value){
         field.setText(value);
     } 
     
+    /**
+     * Sets the value of a JLabel
+     * @param label The JLabel
+     * @param value  The String value
+     */
     private void set(javax.swing.JLabel label, String value) {
         label.setText(value);
     }
+    
+    /**
+     * Extracts an integer value from a JTextField
+     * @param field The JTextField
+     * @return The integer value
+     */
     private int extract(javax.swing.JTextField field){
         int fieldValue;
         
@@ -237,8 +282,9 @@ public class MultiplicationProblems extends javax.swing.JFrame {
         return fieldValue;
     }
     
-   
-
+    /**
+     * Writes the data from a problem to the log file.
+     */
     private void writeLog() {
         String correct;
         String time;

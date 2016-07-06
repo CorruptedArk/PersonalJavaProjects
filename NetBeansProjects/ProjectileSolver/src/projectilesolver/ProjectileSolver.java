@@ -70,21 +70,11 @@ public class ProjectileSolver extends javax.swing.JFrame {
         ΔxField.setName("ΔxField"); // NOI18N
 
         aField.setToolTipText("");
-        aField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aFieldActionPerformed(evt);
-            }
-        });
 
         tField.setText(" ");
         tField.setName("tField"); // NOI18N
         tField.setSelectionEnd(0);
         tField.setSelectionStart(0);
-        tField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tFieldActionPerformed(evt);
-            }
-        });
 
         solveButton.setActionCommand("solve");
         solveButton.setLabel("Solve");
@@ -268,6 +258,10 @@ public class ProjectileSolver extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Solves the system with the data available.
+     * @param evt The clicking event from solveButton
+     */
     private void solveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solveButtonActionPerformed
         vi2Label.setText("");
         vf2Label.setText("");
@@ -329,6 +323,10 @@ public class ProjectileSolver extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_solveButtonActionPerformed
 
+    /**
+     * Clears the fields.
+     * @param evt The clicking event from clearButton
+     */
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         ΔxField.setText("");
         aField.setText("");
@@ -340,15 +338,11 @@ public class ProjectileSolver extends javax.swing.JFrame {
         t2Label.setText("");
     }//GEN-LAST:event_clearButtonActionPerformed
 
-    private void tFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tFieldActionPerformed
-
-    private void aFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aFieldActionPerformed
-
-    
+    /**
+     * Extracts a value from a JTextField.
+     * @param field The JTextField
+     * @return The double value
+     */
     public double extract(javax.swing.JTextField field){
         double fieldValue;
         
@@ -362,6 +356,11 @@ public class ProjectileSolver extends javax.swing.JFrame {
         return fieldValue;
     }
     
+    /**
+     * Checks whether or not a field contains a double.
+     * @param field The JTextField
+     * @return True if the field contains a double, otherwise false.
+     */
     public boolean hasDouble(javax.swing.JTextField field) {
         
         boolean isDouble = true; 
@@ -376,6 +375,11 @@ public class ProjectileSolver extends javax.swing.JFrame {
         return isDouble;
     }
     
+    /**
+     * Sets the value of a text field.
+     * @param field The JTextField
+     * @param value The double value
+     */
     public void set(javax.swing.JTextField field, double value){
         if(Double.isInfinite(value) || Double.isNaN(value)){
             field.setText("Undefined");
@@ -387,6 +391,11 @@ public class ProjectileSolver extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Sets the value of a label.
+     * @param label The JLabel
+     * @param value The double value
+     */
     public void set(javax.swing.JLabel label, double value){
         if(Double.isInfinite(value) || Double.isNaN(value)){
     		label.setText("Undefined");

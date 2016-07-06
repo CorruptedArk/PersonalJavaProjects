@@ -109,6 +109,10 @@ public class PasswordGenerator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Generates a random password of desired length.
+     * @param evt The clicking event for generateButton
+     */
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         String pass;
         if(lengthField.getText().isEmpty()){
@@ -121,6 +125,10 @@ public class PasswordGenerator extends javax.swing.JFrame {
         passField.setText(pass);
     }//GEN-LAST:event_generateButtonActionPerformed
 
+    /**
+     * Copies the contents of passField to the clipboard.
+     * @param evt The clicking event from copyButton
+     */
     private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
         passField.setSelectionStart(0);
         passField.setSelectionEnd(passField.getText().length());

@@ -18,6 +18,12 @@ public class ConstantAcceleration {
     public double a;
     public double t,t2;
     
+    /**
+     * Solves the system.
+     * @param vi Initial velocity
+     * @param a Acceleration
+     * @param t Duration
+     */ 
     public void noVfNoΔx(double vi, double a, double t){
         this.vi = vi;
         this.a = a;
@@ -26,6 +32,12 @@ public class ConstantAcceleration {
         this.Δx = (vi*t) + (.5*a*Math.pow(t, 2));
     }
     
+    /**
+     * Solves the system.
+     * @param vf Final velocity
+     * @param a Acceleration
+     * @param t Duration
+     */
     public void noViNoΔx(double vf, double a, double t){
         this.vf = vf;
         this.a = a;
@@ -34,6 +46,12 @@ public class ConstantAcceleration {
         this.Δx = (vf*t) - (.5*a*Math.pow(t, 2));
     }
     
+    /**
+     * Solves the system.
+     * @param vi Initial velocity
+     * @param vf Final velocity
+     * @param t Duration
+     */
     public void noANoΔx(double vi, double vf, double t){
         this.vi = vi;
         this.vf = vf;
@@ -42,6 +60,12 @@ public class ConstantAcceleration {
         this.a = (vf - vi) / t;
     }
     
+    /**
+     * Solves the system.
+     * @param vi Initial velocity
+     * @param vf Final velocity
+     * @param a Acceleration
+     */
     public void noTNoΔx(double vi, double vf, double a){
         this.vi = vi;
         this.vf = vf;
@@ -50,6 +74,12 @@ public class ConstantAcceleration {
         this.Δx = (Math.pow(vf, 2) - Math.pow(vi, 2)) / (2*a);
     }
     
+    /**
+     * Solves the system.
+     * @param vf Final velocity
+     * @param Δx Change in position
+     * @param t Duration
+     */
     public void noViNoA(double vf, double Δx, double t){
         this.vf = vf;
         this.Δx = Δx;
@@ -58,6 +88,12 @@ public class ConstantAcceleration {
         this.a = (2*((vf*t) - Δx)) / Math.pow(t, 2);
     }
     
+    /**
+     * Solves the system.
+     * @param vi Initial velocity
+     * @param Δx Change in position
+     * @param t Duration
+     */
     public void noVfNoA(double vi, double Δx, double t) {
         this.vi = vi;
         this.Δx = Δx;
@@ -66,6 +102,12 @@ public class ConstantAcceleration {
         this.a = (2*(Δx - (vi*t))) / Math.pow(t, 2);
     }
     
+    /**
+     * Solves the system.
+     * @param vi Initial velocity
+     * @param vf Final velocity
+     * @param Δx Change in position
+     */
     public void noTNoA(double vi, double vf, double Δx){
         this.vi = vi;
         this.vf = vf;
@@ -74,6 +116,12 @@ public class ConstantAcceleration {
         this.t = (2*Δx) / (vf + vi);
     }
     
+    /**
+     * Solves the system.
+     * @param vf Final velocity
+     * @param Δx Change in position
+     * @param a Acceleration
+     */
     public void noViNoT(double vf, double Δx, double a){
         this.vf = vf;
         this.Δx = Δx;
@@ -96,6 +144,12 @@ public class ConstantAcceleration {
         }
     }
     
+    /**
+     * Solves the system.
+     * @param vi Initial velocity
+     * @param Δx Change in position
+     * @param a Acceleration
+     */
     public void noVfNoT(double vi, double Δx, double a){ 
         this.vi = vi;
         this.Δx = Δx;
@@ -117,6 +171,12 @@ public class ConstantAcceleration {
         }
     }
     
+    /**
+     * 
+     * @param Δx Change in position
+     * @param a Acceleration
+     * @param t Duration
+     */
     public void noViNoVf(double Δx, double a, double t){
         this.Δx = Δx;
         this.a = a;

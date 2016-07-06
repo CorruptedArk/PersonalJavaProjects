@@ -132,6 +132,10 @@ public class MultiplicationTesting extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Starts the first problem.
+     * @param evt The clicking event from startButton
+     */
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
             
             if(extract(highSpinner) > extract(lowSpinner)){
@@ -141,6 +145,11 @@ public class MultiplicationTesting extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_startButtonActionPerformed
 
+    /**
+     * Extracts an integer value from a JSpinner.
+     * @param spinner The JSpinner
+     * @return An integer value
+     */
     public int extract(JSpinner spinner){
         
         Integer integer = (Integer)spinner.getValue();
