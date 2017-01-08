@@ -205,6 +205,12 @@ public class PolyRegression {
 		}
 	}
 	
+	/**
+	 * Finds least squares solution to the equation Ax = b for x
+	 * @param A 
+	 * @param b
+	 * @return Least squares solution for x
+	 */
 	static double[][] regression(double[][] A, double[][] b){
 		return multiply(multiply(inverse(multiply(transpose(A),A)),transpose(A)),b);
 	}
