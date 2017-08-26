@@ -7,35 +7,42 @@ public class PolyRegression {
 	static Scanner scan = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		print("How many points are in your plot?: ");
-		int pointCount = scan.nextInt();
-		
-		double[][] pointMatrix = new double[pointCount][2];
-		
-		print("\nEnter your points. Separate x and y with a space, press the enter key after each point:\n");
-		
-		input(pointMatrix);
-		
-		print("What is the power of your polynomial? ");
-		
-		int power = scan.nextInt();
-		
-		double[][] A = new double[pointCount][power+1];
-		double[][] b = new double[pointCount][1];
-		
-		for(int i = 0; i < pointCount; i++){
-			int exponent = power;
-			b[i][0] = pointMatrix[i][1];
-			for(int j = 0; j < power+1; j++){
-				A[i][j] = Math.pow(pointMatrix[i][0], exponent);
-				exponent--;
+		String again;
+		do {
+			print("How many points are in your plot?: ");
+			int pointCount = scan.nextInt();
+			
+			double[][] pointMatrix = new double[pointCount][2];
+			
+			print("\nEnter your points. Separate x and y with a space, press the enter key after each point:\n");
+			
+			input(pointMatrix);
+			
+			print("What is the power of your polynomial? ");
+			
+			int power = scan.nextInt();
+			
+			double[][] A = new double[pointCount][power+1];
+			double[][] b = new double[pointCount][1];
+			
+			for(int i = 0; i < pointCount; i++){
+				int exponent = power;
+				b[i][0] = pointMatrix[i][1];
+				for(int j = 0; j < power+1; j++){
+					A[i][j] = Math.pow(pointMatrix[i][0], exponent);
+					exponent--;
+				}
 			}
-		}
-		
-		double[][] x = regression(A,b);
-		
-		print("\nThese are your coefficients in standard order:\n");
-		print(x);
+			
+			double[][] x = regression(A,b);
+			
+			print("\nThese are your coefficients in standard order:\n");
+			print(x);
+			
+			print("\nWould you like to continue? (Y to continue):\n");
+			again = scan.next();
+			print("\n");
+		} while(again.equalsIgnoreCase("y"));
 	}
 	
 	/**
